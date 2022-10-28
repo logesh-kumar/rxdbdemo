@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App, { AppProps } from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { initRXDB } from "./userDb";
 
@@ -9,8 +9,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-initRXDB().then((data: any) => {
-  console.log({sssds: data.users$.subscribe});
+initRXDB().then((data: any) => {  
   root.render(
     <React.StrictMode>
       <App users$={data.users$} addUser={data.addUser} />
